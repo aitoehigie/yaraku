@@ -16,6 +16,7 @@ class BookController extends Controller
     {
         $books = Book::all()->get()->toJson();
         $books = json_decode($books);
+        dd($books);
         return view('index')->with(['books'=>$books]);
     }
 
