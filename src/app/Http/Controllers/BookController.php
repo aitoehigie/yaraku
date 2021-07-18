@@ -14,9 +14,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all()->get()->toJson();
+        $books = Book::latest()->get()->toJson();
         $books = json_decode($books);
-        dd($books);
         return view('index')->with(['books'=>$books]);
     }
 

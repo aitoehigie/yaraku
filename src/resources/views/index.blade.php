@@ -11,10 +11,8 @@
   
   @foreach ($books as $book)
   <tr class="bg-gray-100 border-b border-gray-200">
-    <td class="px-4 py-3">{{ $book->name }}</td>
-    @foreach ($book as $author)
-    <td class="px-4 py-3">{{ $author->name }}</td>
-    @endforeach
+    <td class="px-4 py-3">{{ $book->title }}</td>
+    <td class="px-4 py-3">{{ $book->author }}</td>
     <td class="px-4 py-3">Delete Me</td>
   </tr> 
   @endforeach
