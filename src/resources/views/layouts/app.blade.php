@@ -54,7 +54,7 @@
 
 		</nav>
 	</div>
-    <div class="container mx-auto pt-24 flex flex-col h-screen justify-between">
+    <div class="container mx-auto pt-24 pb-24">
     @yield('content')
     </div>
     <!-- component -->

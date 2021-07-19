@@ -63,7 +63,8 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd('ok');
+        //return view('edit')->with(['book'=>Book::findOrFail($id)]);
     }
 
     /**
