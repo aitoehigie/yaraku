@@ -93,4 +93,14 @@ class BookController extends Controller
         $book->delete();
         return redirect('/books');
     }
+
+    public function search(Request $request){
+        $search = $request->input('search');
+
+        $books = Book::query()
+            ->where('title', 'LIKE', '%'.$search.'%')
+            ->orWhere('author', 'LIKE', '%'.$search.'%')
+            ->get();
+        return view('index')->with(['books'=>$books]);
+    }
 }
