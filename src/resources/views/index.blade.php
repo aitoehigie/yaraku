@@ -47,9 +47,9 @@
   @forelse ($books as $book)
   <tr class="bg-gray-100 border-b border-gray-200">
     <td class="px-4 py-3">
-        <a href="/books/{{ $book->id }}/edit">{{ $book->title }}</a>
+        {{ $book->title }}
     </td>
-    <td class="px-4 py-3">{{ $book->author }}</td>
+    <td class="px-4 py-3"><a href="/books/{{ $book->id }}/edit">{{ $book->author }}</a></td>
     <td class="px-4 py-3">
         <form method="POST" action="/books/{{ $book->id }}">
             @csrf
