@@ -62,9 +62,8 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        dd('ok');
-        //return view('edit')->with(['book'=>Book::findOrFail($id)]);
+    {   
+        return view('edit')->with(['book'=>Book::findOrFail($id)]);
     }
 
     /**
