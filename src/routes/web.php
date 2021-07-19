@@ -13,4 +13,5 @@
 
 Route::resource('books', BookController::class);
 Route::get('search', 'SearchController@search')->name('search');
-Route::get('data_export', 'DataExportController@download_title_and_author_data');
+//Route::get('download', 'DataExportController@download');
+Route::get('download', 'DataExportController@index');

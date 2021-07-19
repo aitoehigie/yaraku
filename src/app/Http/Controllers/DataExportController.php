@@ -6,22 +6,33 @@ use Illuminate\Http\Request;
 use App\Book;
 
 class DataExportController extends Controller
-{
-  public function download_title_and_author_data(){
-    $title_and_author = Book::all();
-    $filename = "title_and_author.csv";
-    $handle = fopen($filename, 'w+');
-    fputcsv($handle, array('id', 'title', 'author');
+{       public function index(){
+            return view('downloads');
+        }
 
-    foreach($table as $row) {
-        fputcsv($handle, array($row['id'], $row['title'], $row['author']));
+        public function download(){
+        $headers = [
+            'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0'
+        ,   'Content-type'        => 'text/csv'
+        ,   'Content-Disposition' => 'attachment; filename=data.csv'
+        ,   'Expires'             => '0'
+        ,   'Pragma'              => 'public'
+        ];
+
+        $list = Book::all()->toArray();
+
+        # add headers for each column in the CSV download
+        array_unshift($list, array_keys($list[0]));
+
+        $callback = function() use ($list) 
+        {
+        $FH = fopen('php://output', 'w');
+        foreach ($list as $row) { 
+            fputcsv($FH, $row);
+        }
+        fclose($FH);
+        };
+
+        return response()->stream($callback, 200, $headers);
     }
-
-    fclose($handle);
-
-    $headers = array(
-        'Content-Type' => 'text/csv',
-    );
-    return Response::download($filename, 'title_and_author.csv', $headers);
-  }
 }

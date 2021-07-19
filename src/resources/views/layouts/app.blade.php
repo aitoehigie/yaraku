@@ -27,17 +27,9 @@ class="flex items-center justify-between flex-wrap bg-white py-4 lg:px-12 shadow
 
 <div class="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
     <div class="text-md font-bold text-blue-700 lg:flex-grow">
-        <a href="#responsive-header"
+        <a href="download"
            class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
-            Menu 1
-        </a>
-        <a href="#responsive-header"
-           class=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
-            Menu 2
-        </a>
-        <a href="#responsive-header"
-           class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
-            Menu 3
+            Download Datasets
         </a>
     </div>
     <div class="relative mx-auto text-gray-600 lg:block hidden">
