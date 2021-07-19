@@ -13,8 +13,7 @@ class SearchController extends Controller
             ->where('title', 'LIKE', '%'.$search.'%')
             ->orWhere('author', 'LIKE', '%'.$search.'%')
             ->get();
-        dd($books);
-        return view('index')->with(['books'=>$books]);
+        return view('results')->with(['books'=>$books]);
     }
 }
 
