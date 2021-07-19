@@ -12,3 +12,4 @@
 */
 
 Route::resource('books', BookController::class);
+Route::get('search', 'SearchController@search')->name('search');
