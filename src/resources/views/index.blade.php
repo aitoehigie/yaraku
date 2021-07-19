@@ -37,20 +37,6 @@
 </div>
 <hr />
 
-<div class="mx-auto container content-center">
-    <p class="text-2xl text-center font-bold m-5">Search for a Book</p>
-    <div class="shadow flex">
-        <form action="{{  route('search') }}" method="GET" class="w-5/6 mx-auto max-w-sm pb-16">
-        <input class="w-full rounded p-2" type="text" placeholder="Enter the book title or author..." required name="search" />
-        <button class="bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 float-right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-        </button>
-    </form>
-    </div>
-</div>
-
 
 <p class="text-2xl text-center font-bold m-5 pt-20">Book List</p>
 <table class="rounded-t-lg m-5 w-5/6 mx-auto bg-gray-200 text-gray-800">
