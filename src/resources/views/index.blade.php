@@ -3,7 +3,7 @@
 @section('content')
 <div class="mx-auto container content-center">
     <p class="text-3xl text-center font-bold m-5">Add a Book</p>
-<form class="w-5/6 mx-auto max-w-sm" method="POST" action="/books">
+<form class="w-5/6 mx-auto max-w-sm pb-16" method="POST" action="/books">
     @csrf
     <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/3">
@@ -44,9 +44,11 @@
     <th class="px-4 py-3">Delete</th>
   </tr>
   
-  @foreach ($books as $book)
+  @forelse ($books as $book)
   <tr class="bg-gray-100 border-b border-gray-200">
-    <td class="px-4 py-3">{{ $book->title }}</td>
+    <a href="/books/{{ $book->id }}/edit">
+        <td class="px-4 py-3">{{ $book->title }}</td>
+    </a>
     <td class="px-4 py-3">{{ $book->author }}</td>
     <td class="px-4 py-3">
         <form method="POST" action="/books/{{ $book->id }}">
@@ -60,6 +62,10 @@
         </form>
     </td>
   </tr> 
-  @endforeach
+  @empty
+  <tr class=" border-b border-gray-200">
+    <td class="px-4 py-3">No books have been added yet.</td>
+  </tr>
+  @endforelse
 </table>
 @endsection
