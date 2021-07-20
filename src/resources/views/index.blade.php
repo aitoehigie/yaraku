@@ -21,7 +21,7 @@
         </label>
       </div>
       <div class="md:w-2/3">
-        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="book-title" name="book-title" type="text" value="{{ old("title") }}">
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="book-title" name="book-title" type="text" value="{{ old("book-title") }}">
       </div>
     </div>
     <div class="md:flex md:items-center mb-6">
@@ -31,7 +31,7 @@
           </label>
         </div>
         <div class="md:w-2/3">
-          <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="book-author" name="book-author" type="text" value="{{ old("author") }}">
+          <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="book-author" name="book-author" type="text" value="{{ old("book-author") }}">
         </div>
       </div>
     <div class="md:flex md:items-center">

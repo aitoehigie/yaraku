@@ -39,8 +39,8 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),
-            ['title' => 'required|unique:books,title|alpha_num',
-            'author' => 'required|alpha_num',
+            ['book-title' => 'required|unique:books,title|string',
+            'book-author' => 'required|string',
         ]);
 
         if ($validator->fails()) {
@@ -90,14 +90,14 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {   
         $validator = Validator::make($request->all(),
-            ['title' => 'required|unique:books,title|alpha_num',
+            ['book-author' => 'required|unique:books,author|string',
         ]);
 
         if ($validator->fails()) {
 
             // redirect back to post create page
             // with submitted form data
-            return redirect('books.edit')
+            return redirect(route('books.edit', $id))
                 ->withErrors($validator)
                 ->withInput();
         }
