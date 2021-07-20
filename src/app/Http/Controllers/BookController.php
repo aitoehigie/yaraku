@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Book;
 
 class BookController extends Controller
@@ -37,6 +38,19 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),
+            ['title' => 'required|unique:books,title|alpha_num',
+            'author' => 'required|alpha_num',
+        ]);
+
+        if ($validator->fails()) {
+
+            // redirect back to post create page
+            // with submitted form data
+            return redirect('books')
+                ->withErrors($validator)
+                ->withInput();
+        }
         $book = Book::create([
             'title'=>$request->input('book-title'),
             'author'=>$request->input('book-author'),
@@ -74,7 +88,19 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        $validator = Validator::make($request->all(),
+            ['title' => 'required|unique:books,title|alpha_num',
+        ]);
+
+        if ($validator->fails()) {
+
+            // redirect back to post create page
+            // with submitted form data
+            return redirect('books.edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
         $book = Book::where('id','=', $id)->update([
             'author' => $request->input('book-author'),
             ]);
