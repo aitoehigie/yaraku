@@ -90,7 +90,7 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {   
         $validator = Validator::make($request->all(),
-            ['book-author' => 'required|unique:books,author|string',
+            ['book-author' => 'required|author|string',
         ]);
 
         if ($validator->fails()) {
