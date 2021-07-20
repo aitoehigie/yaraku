@@ -5,6 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>Yaraku Booklist Application</title>
+    <style>
+        form .alert ul {
+            margin-bottom: 2em;
+        }
+
+        form .alert ul li {
+            color: red;
+            margin: 5px 0;
+            min-height: auto;
+        }
+    </style>
 </head>
 <body>
     <!-- component -->
