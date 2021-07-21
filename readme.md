@@ -47,3 +47,12 @@ Run this command in the root of the project to run all tests `./vendor/bin/phpun
 9. Visit the IP address of your EC2 instance to view the running application.
 
 
+## Usage
+1. You can add books by supplying the necessary details in the form.
+2. Kindly note that you will not be able to add books that already exist in the database.
+3. You can also update the book author names by clicking on the edit icon by each name.
+4. The application also has a search capability to search for books based on names of the books and their authors.
+5. You can also download book datasets in CSV and XML file format.
+
+
+
