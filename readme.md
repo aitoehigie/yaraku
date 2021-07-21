@@ -30,6 +30,10 @@ docker-compose stop \
   && docker-compose up -d
 ``` 
 
+## Testing
+Run this command in the root of the project to run all tests `./vendor/bin/phpunit`
+
+
 ## Remote Setup 
 1. Provision an AWS EC2 instance and ssh into it.
 2. Install docker. Instructions here: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04).
